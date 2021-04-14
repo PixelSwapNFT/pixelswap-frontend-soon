@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  frontend:
+    build:
+        context: ./
+    networks:
+      - default
+      - web
+    labels:
+      traefik.enable: "true"
+      traefik.http.routers.clip-master-frontend.rule: "Host(`${DOCKER_DOMAIN}`)"
+      traefik.http.routers.clip-master-frontend.entrypoints: "web, websecure"
+    restart: ${DOCKER_RESTART}
+
+networks: 
+  web:
+    external: true
