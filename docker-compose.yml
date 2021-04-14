@@ -9,8 +9,8 @@ services:
       - web
     labels:
       traefik.enable: "true"
-      traefik.http.routers.clip-master-frontend.rule: "Host(`${DOCKER_DOMAIN}`)"
-      traefik.http.routers.clip-master-frontend.entrypoints: "web, websecure"
+      traefik.http.routers.pixelswap-frontend-soon.rule: "Host(`${DOCKER_DOMAIN}`)"
+      traefik.http.routers.pixelswap-frontend-soon.entrypoints: "web, websecure"
     restart: ${DOCKER_RESTART}
 
 networks: 
